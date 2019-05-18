@@ -17,12 +17,12 @@ export default {
     }
   },
   methods: {
-    apipublic: async function () {
-      let res = await axios.get('http://localhost:8080/public');
+    apiPublic: async function () {
+      let res = await axios.get('http://localhost:8000/public');
       this.msg = res.data;
     },
     apiPrivate: async function () {
-      let res = await axios.get('http://localhost:8080/private');
+      let res = await axios.get('http://localhost:8000/private');
       this.msg = res.data;
     }
   }
