@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essensial links</h2>
+    <h2>Essential links</h2>
     <button @click="apiPublic">public</button>
     <button @click="apiPrivate">private</button>
   </div>
@@ -32,7 +32,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
-  font-weight: nomal;
+  font-weight: normal;
 }
 ul {
   list-style-type: none;
