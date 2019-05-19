@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h1>Hello {{ name }}.</h1>
     <h1>{{ msg }}</h1>
     <h2>Essential links</h2>
     <button @click="apiPublic">public</button>
@@ -15,7 +16,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      name: firebase.auth().currentUser.email
     }
   },
   methods: {
