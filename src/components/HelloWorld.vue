@@ -4,11 +4,13 @@
     <h2>Essential links</h2>
     <button @click="apiPublic">public</button>
     <button @click="apiPrivate">private</button>
+    <button @click="signOut">Sign out</button>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import firebase from 'firebase';
 export default {
   name: 'HelloWorld',
   data () {
@@ -24,6 +26,12 @@ export default {
     apiPrivate: async function () {
       let res = await axios.get('http://localhost:8000/private');
       this.msg = res.data;
+    },
+    signOut: function () {
+      firebase.auth().signOut().then(() => {
+        localStorage.removeItem('jwt')
+        this.$router.push('/signin')
+      })
     }
   }
 };
